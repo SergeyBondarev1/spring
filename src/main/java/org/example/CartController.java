@@ -19,13 +19,10 @@ public class CartController {
         this.cartService = cartService;
         this.serviceA = serviceA;
     }
-
-    // http://localhost:8080/store/order/get
     @GetMapping("/add")
     public void add(@RequestParam Integer[] ids) {
         cartService.add(ids);
     }
-
     @GetMapping("/get")
     public List<Integer> get() {
         return cartService.all();
